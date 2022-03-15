@@ -219,7 +219,7 @@ public:
         if (autodrive) {
             if (has_camera) {
                 std::cout << "switching to auto-drive...\n";
-                set_speed(50.0); // km/h
+                set_speed(60.0); // km/h
             } else
             std::cout << "impossible to switch auto-drive on without camera...\n";
         } else {
@@ -237,10 +237,10 @@ public:
             wheel_angle = steering_angle - 0.1;
         steering_angle = wheel_angle;
         // limit range of the steering angle
-        if (wheel_angle > 0.5)
-            wheel_angle = 0.5;
-        else if (wheel_angle < -0.5)
-            wheel_angle = -0.5;
+        if (wheel_angle > 0.38)
+            wheel_angle = 0.38;
+        else if (wheel_angle < -0.38)
+            wheel_angle = -0.38;
         motorista.setSteeringAngle(wheel_angle);
     }
 
